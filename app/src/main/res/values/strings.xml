@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BaiTap</string>
+    <string name="bmi18"> Người gầy, cần bồi dưỡng thêm.</string>
+    <string name="bmi24"> Thân hình hoàn toàn bình thường.</string>
+    <string name="bmi29"> Người béo phì độ I, cần có chế độ ăn uống hợp lý.</string>
+    <string name="bmi34"> Người béo phì độ II, hãy thận trọng.</string>
+    <string name="bmi35"> Người béo phì độ III, cảnh báo nguy cơ béo phì.</string>
+
+</resources>
