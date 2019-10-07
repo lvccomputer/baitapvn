@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +20,7 @@ public class FragmentBMI extends BaseFragment {
     private TextView tvResult, tvReview;
 
     private LinearLayout btnCount;
+    private ImageView imgBack;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -30,6 +33,7 @@ public class FragmentBMI extends BaseFragment {
         tvResult = view.findViewById(R.id.tvResult);
         tvReview = view.findViewById(R.id.tvReview);
         btnCount = view.findViewById(R.id.btnCount);
+        imgBack = view.findViewById(R.id.imgBack);
     }
 
     private void actionView() {
@@ -56,6 +60,12 @@ public class FragmentBMI extends BaseFragment {
                 }else {
                     Toast.makeText(mainActivity,"Chieu cao hoac Can nang khong hop le!",Toast.LENGTH_SHORT).show();
                 }
+            }
+        });
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.onBackPressed();
             }
         });
     }

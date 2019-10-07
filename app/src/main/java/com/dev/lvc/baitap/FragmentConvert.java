@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -15,6 +16,7 @@ public class FragmentConvert extends BaseFragment {
     private LinearLayout btnConvert;
     private EditText editText;
     private TextView tvResult;
+    private ImageView imgBack;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class FragmentConvert extends BaseFragment {
         btnConvert = view.findViewById(R.id.btnConvert);
         editText = view.findViewById(R.id.edtC);
         tvResult =view.findViewById(R.id.tvResult);
+        imgBack = view.findViewById(R.id.imgBack);
 
     }
     private void setAction(){
@@ -38,6 +41,12 @@ public class FragmentConvert extends BaseFragment {
                     String result = Util.convertTempF(Integer.valueOf(editText.getText().toString()));
                     tvResult.setText(result);
                 }
+            }
+        });
+        imgBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mainActivity.onBackPressed();
             }
         });
     }

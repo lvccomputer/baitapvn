@@ -104,6 +104,44 @@
                 android:src="@drawable/ic_right" />
         </RelativeLayout>
     </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layoutFood"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_margin="10dp"
+            android:background="?attr/selectableItemBackground">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#fff">
+
+                <ImageView
+                    android:id="@+id/imgIcon3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:padding="10dp"
+                    android:src="@drawable/convert" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toRightOf="@id/imgIcon3"
+                    android:gravity="center_vertical"
+                    android:paddingStart="10dp"
+                    android:text="Food"
+                    android:textColor="#000"
+                    android:textSize="18sp" />
+
+                <ImageView
+                    android:id="@+id/imgRight3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_alignParentEnd="true"
+                    android:padding="20dp"
+                    android:src="@drawable/ic_right" />
+            </RelativeLayout>
+        </RelativeLayout>
     </LinearLayout>
 
 </RelativeLayout>
