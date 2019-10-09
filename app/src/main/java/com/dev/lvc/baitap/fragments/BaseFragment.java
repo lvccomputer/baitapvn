@@ -1,4 +1,4 @@
-package com.dev.lvc.baitap;
+package com.dev.lvc.baitap.fragments;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.dev.lvc.baitap.activities.MainActivity;
 
 public abstract class BaseFragment extends Fragment {
     protected View view;

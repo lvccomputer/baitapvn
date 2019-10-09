@@ -1,4 +1,4 @@
-package com.dev.lvc.baitap;
+package com.dev.lvc.baitap.fragments;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,7 +8,9 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class FragmentFood extends BaseFragment implements View.OnClickListener {
+import com.dev.lvc.baitap.R;
+
+public class FoodFragment extends BaseFragment implements View.OnClickListener {
 
 
     private LinearLayout mon1,mon2,mon3,mon4,mon5,mon6,mon7,mon8;

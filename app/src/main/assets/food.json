@@ -1,0 +1,42 @@
+{
+	"Foods":[
+		{
+			"name": "Bánh giò",
+			"icon": "https://img-global.cpcdn.com/005_recipes/9a588a2c121c9192/751x532cq70/banh-gio-recipe-main-photo.jpg",
+			"price": "20000"
+		},
+		{
+			"name": "Bánh Mỳ",
+			"icon": "https://images.foody.vn/res/g25/240463/prof/s576x330/foody-mobile-12-jpg-977-636163764339001083.jpg",
+			"price": "10000"
+		},
+		{
+			"name": "Bún bò Huế",
+			"icon": "https://i.ytimg.com/vi/J411HrgDTJ8/maxresdefault.jpg",
+			"price": "35000"
+		},
+		{
+			"name": "Phở bò",
+			"icon": "https://banhmro.com.vn/wp-content/uploads/2018/08/cach-nau-pho-bo-ngon.jpg",
+			"price": "20000"
+		}
+	],
+	"Drinks":[
+		{
+
+			"name": "Pepsi",
+			"icon": "https://images-na.ssl-images-amazon.com/images/I/71Q%2BYcyMgvL._SX425_.jpg",
+			"price": "12000"
+		},
+		{
+			"name": "Coca cola",
+			"icon": "https://media3.scdn.vn/img3/2019/3_15/Px2B1d.jpg",
+			"price": "10000"
+		},
+		{
+			"name": "Trà đá",
+			"icon": "https://image.vtcns.com/files/phamquy/2018/09/05/img-3504-0003102.jpg",
+			"price": "35000"
+		}
+	]
+}

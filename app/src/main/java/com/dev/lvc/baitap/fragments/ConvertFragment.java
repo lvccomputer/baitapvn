@@ -1,4 +1,4 @@
-package com.dev.lvc.baitap;
+package com.dev.lvc.baitap.fragments;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -11,7 +11,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class FragmentConvert extends BaseFragment {
+import com.dev.lvc.baitap.activities.MainActivity;
+import com.dev.lvc.baitap.R;
+import com.dev.lvc.baitap.Utils;
+
+public class ConvertFragment extends BaseFragment {
 
     private LinearLayout btnConvert;
     private EditText editText;
@@ -38,7 +42,7 @@ public class FragmentConvert extends BaseFragment {
             public void onClick(View v) {
                 MainActivity.hideKeyBoard(mainActivity);
                 if (!TextUtils.isEmpty(editText.getText().toString())){
-                    String result = Util.convertTempF(Integer.valueOf(editText.getText().toString()));
+                    String result = Utils.convertTempF(Integer.valueOf(editText.getText().toString()));
                     tvResult.setText(result);
                 }
             }

@@ -1,4 +1,4 @@
-package com.dev.lvc.baitap;
+package com.dev.lvc.baitap.fragments;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -6,14 +6,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class FragmentBMI extends BaseFragment {
+import com.dev.lvc.baitap.activities.MainActivity;
+import com.dev.lvc.baitap.R;
+import com.dev.lvc.baitap.Utils;
+
+public class BMIFragment extends BaseFragment {
 
     private EditText edtWeight, edtHeight;
 
@@ -42,7 +45,7 @@ public class FragmentBMI extends BaseFragment {
             public void onClick(View v) {
                 MainActivity.hideKeyBoard(mainActivity);
                 if (!TextUtils.isEmpty(edtWeight.getText().toString()) || !TextUtils.isEmpty(edtHeight.getText().toString())) {
-                    float result = Util.BMI(Float.valueOf(edtWeight.getText().toString()), Integer.valueOf(edtHeight.getText().toString()));
+                    float result = Utils.BMI(Float.valueOf(edtWeight.getText().toString()), Integer.valueOf(edtHeight.getText().toString()));
                     tvResult.setText(result+"");
                     if (result<18){
                         tvReview.setText(R.string.bmi18);

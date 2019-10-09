@@ -1,4 +1,4 @@
-package com.dev.lvc.baitap;
+package com.dev.lvc.baitap.activities;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,22 +7,24 @@ import androidx.fragment.app.Fragment;
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import com.dev.lvc.baitap.R;
+import com.dev.lvc.baitap.fragments.BMIFragment;
+import com.dev.lvc.baitap.fragments.ConvertFragment;
+import com.dev.lvc.baitap.fragments.FoodFragment;
+import com.dev.lvc.baitap.fragments.PayFragment;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private RelativeLayout layoutConvert, layoutBMI,layoutFood;
+    private RelativeLayout layoutConvert, layoutBMI,layoutFood,layoutPay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         layoutConvert = findViewById(R.id.layoutConvert);
         layoutBMI = findViewById(R.id.layoutBMI);
         layoutFood = findViewById(R.id.layoutFood);
+        layoutPay = findViewById(R.id.layoutPay);
     }
 
     private void setAction() {
@@ -58,29 +61,41 @@ public class MainActivity extends AppCompatActivity {
                 showFoodFragment();
             }
         });
+        layoutPay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showPayFragment();
+            }
+        });
     }
 
     private void showConvertFragment() {
 
-        if (getSupportFragmentManager().findFragmentByTag(FragmentConvert.class.getName()) == null) {
-            FragmentConvert fragmentConvert = new FragmentConvert();
-            addNewFragments(fragmentConvert, FragmentConvert.class.getName(), FragmentConvert.class.getName());
+        if (getSupportFragmentManager().findFragmentByTag(ConvertFragment.class.getName()) == null) {
+            ConvertFragment convertFragment = new ConvertFragment();
+            addNewFragments(convertFragment, ConvertFragment.class.getName(), ConvertFragment.class.getName());
         }
     }
 
     private void showBMIFragment() {
-        if (getSupportFragmentManager().findFragmentByTag(FragmentBMI.class.getName()) == null) {
-            FragmentBMI bmi = new FragmentBMI();
-            addNewFragments(bmi, FragmentBMI.class.getName(), FragmentBMI.class.getName());
+        if (getSupportFragmentManager().findFragmentByTag(BMIFragment.class.getName()) == null) {
+            BMIFragment bmi = new BMIFragment();
+            addNewFragments(bmi, BMIFragment.class.getName(), BMIFragment.class.getName());
         }
     }
     private void showFoodFragment(){
-        if (getSupportFragmentManager().findFragmentByTag(FragmentFood.class.getName()) ==null){
-            FragmentFood fragmentFood = new FragmentFood();
-            addNewFragments(fragmentFood,FragmentFood.class.getName(),FragmentFood.class.getName());
+        if (getSupportFragmentManager().findFragmentByTag(FoodFragment.class.getName()) ==null){
+            FoodFragment foodFragment = new FoodFragment();
+            addNewFragments(foodFragment, FoodFragment.class.getName(), FoodFragment.class.getName());
         }
     }
 
+    private void showPayFragment(){
+        if (getSupportFragmentManager().findFragmentByTag(PayFragment.class.getName()) ==null){
+            PayFragment fragment = new PayFragment();
+            addNewFragments(fragment,PayFragment.class.getName(),PayFragment.class.getName());
+        }
+    }
     private void addNewFragments(@NonNull Fragment fragment, @NonNull String fragmentTags, @NonNull String backStack) {
         getSupportFragmentManager()
                 .beginTransaction()
@@ -90,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                 .commitAllowingStateLoss();
 
     }
+
 
     public static void hideKeyBoard(Activity activity) {
         InputMethodManager inputMethodManager =
