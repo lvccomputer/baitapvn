@@ -1,0 +1,55 @@
+{
+	"Travel":[
+		{
+			"name": "Hà Nội",
+			"icon": "hanoi.jpg",
+			"content": "Trong các clip về Việt Nam của bạn bè khắp năm châu, bốn bể, hình ảnh ruộng bậc thang ngút ngàn luôn xuất hiện với nét đẹp độc đáo. Ruộng bậc thang đẹp bốn mùa quanh năm, vừa rộng lớn, hùng vĩ, lại vừa uyển chuyển, nên thơ. Vào mùa nước đổ, ruộng bậc thang lấp lánh ánh vàng, phản chiếu ánh sáng mặt trời, lúa trổ đòng thì xanh mơn mởn tràn đầy sức sống, khi lúa chín thì vàng ruộm một màu rực rỡ. Bởi vậy chẳng có gì ngạc nhiên khi những thửa rộng bậc thang Việt Nam được bình chọn là một trong những cảnh quan có màu xanh lá mướt mát đẹp nhất trên thế giới"
+		},
+		{
+			"name": "Ruộng bậc thang",
+			"icon": "ruongbacthang.jpg",
+			"content": "Hà Nội có một vẻ đẹp khó cưỡng toát lên từ khí chất, từ “cái hồn” đặc trưng của nơi đây. Du khách trong và ngoài nước mê Hà Nội bởi vẻ đẹp pha trộn giữa xưa và nay, giữa nét truyền thống của ngàn năm văn hiến và sự hiện đại của một đô thị đang phát triển mạnh mẽ."
+		},
+		{
+			"name": "Vịnh Hạ Long",
+			"icon": "halong.jpg",
+			"content": "Không chỉ được UNESCO công nhận vịnh là Di sản thiên nhiên thế giới, tháng 3/2012, vịnh Hạ Long còn nhận thêm danh hiệu là một trong 7 kỳ quan thiên nhiên mới của thế giới do tổ chức 7 New Open World phát động. Vịnh Hạ Long giống như một bức tranh thủy mặc khổng lồ, với hàng ngàn đảo đá muôn hình vạn trạng, góp phần tạo nên vẻ sống động, "
+		},
+		{
+			"name": "Hang Sơn Đoòng",
+			"icon": "sondoong.jpg",
+			"content": "Được công nhận là hang động tự nhiên lớn nhất thế giới, hang Sơn Đoòng có lẽ là từ khoá hot nhất trong năm 2015 với cả du lịch Việt Nam và du lịch thế giới. Sơn Đoòng sở hữu vẻ đẹp kỳ thú, đặc biệt “hiếm có, khó tìm”. Càng đi sâu vào Sơn Đoòng, càng nhiều hóa "
+		},
+		{
+			"name": "Phố cổ Hội An",
+			"icon": "hoian.jpg",
+			"content": "Có nhiều người mê Hội An đến mức một năm không ghé thăm một lần là trong lòng thấy bứt rứt, khó chịu. Hội An không lớn, nhưng nét quyến rũ của nơi đây thì phải dùng từ vô biên để miêu tả. Dãy phố cổ với những ngôi nhà gỗ cổ kính, "
+		},
+		{
+			"name": "Đèo Hải Vân",
+			"icon": "deohaivan.jpg",
+			"content": "Cung đường đèo Hải Vân mê ly đến nỗi nhiều người nhút nhát cũng quyết định “liều” một phen, “phượt” qua đây bằng xe máy để cảm nhận được hết vẻ đẹp của nó. Từng xuất hiện trong show truyền hình thực tế Top Gear năm 2008 của Anh, "
+		},
+		{
+			"name": "Đại Nội - cố đô Huế",
+			"icon": "hue.jpg",
+			"content": "Tại Hội nghị của Bộ trưởng phụ trách Văn hóa nghệ thuật (VHNT) các nước ASEAN + 3 (Nhật Bản, Hàn Quốc, Trung Quốc) vừa qua, Huế đã vinh dự nằm trong top 1 trong 3 được nhận danh hiệu Thành phố văn hóa của ASEAN giai đoạn 2014 - 2015"
+		},
+		{
+			"name": "Biển Nha Trang",
+			"icon": "nhatrang.jpg",
+			"content": "Nha Trang từng lọt vào danh sách một trong những bãi biển đẹp nhất thế giới. Cảnh đẹp tuyệt vời nơi đây là một trong những niềm tự hào của người dân Việt Nam về quê hương xứ sở. Nơi đây được yêu thích không chỉ bởi bãi biển lộng lẫy với biển xanh, "
+		},
+		{
+			"name": "Đồi Cát Bay - Mũi Né",
+			"icon": "muine.jpg",
+			"content": "Đồi cát mịn như nhung ở Mũi Né là background mà nhiều tạp chí cũng như nhiếp ảnh gia nổi danh trên thế giới ưa chuộng. Cồn cát ở đây do mỏ sắt cổ tồn tại hàng trăm năm kiến tạo nên. Gọi là đồi cát Bay vì hình dáng của đồi cát thay đổi theo giờ, "
+		},
+		{
+			"name": "Rừng ngập mặn Cần Giờ",
+			"icon": "rungcangio.jpg",
+			"content": "Rừng ngập mặn Cần Giờ vừa lọt vào danh sách 27 kỳ quan thiên nhiên ở châu Á do Smarter Travel , chuyên trang du lịch của Mỹ bình chọn. Nơi đây là một trong những địa điểm du lịch sinh thái lý tưởng, được UNESCO công nhận là khu dự trữ sinh quyển của Đông Nam Á. "
+		},
+	]
+	
+}
