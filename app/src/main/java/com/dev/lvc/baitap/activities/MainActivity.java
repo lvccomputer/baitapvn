@@ -3,6 +3,8 @@ package com.dev.lvc.baitap.activities;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -16,15 +18,39 @@ import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.dev.lvc.baitap.R;
+import com.dev.lvc.baitap.adapters.MenuAdapter;
 import com.dev.lvc.baitap.fragments.BMIFragment;
 import com.dev.lvc.baitap.fragments.ConvertFragment;
+import com.dev.lvc.baitap.fragments.DetailTravelFragment;
 import com.dev.lvc.baitap.fragments.FoodFragment;
 import com.dev.lvc.baitap.fragments.PayFragment;
+import com.dev.lvc.baitap.fragments.TravelFragment;
+import com.dev.lvc.baitap.models.Menu;
+import com.dev.lvc.baitap.models.Travel;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
 
-    private RelativeLayout layoutConvert, layoutBMI,layoutFood,layoutPay;
+    private RecyclerView rcvMenu;
+    private MenuAdapter menuAdapter;
+    private ArrayList<Menu> menuArrayList;
+
+    private int[] icon = {
+            R.drawable.bmi,
+            R.drawable.convert,
+            R.drawable.food,
+            R.drawable.money,
+            R.drawable.travel
+    };
+    private String[] title = {
+            "Tính Chỉ số BMI",
+            "Đổi độ C sang độ F",
+            "Danh sách thức ăn - Đồ uống",
+            "Thanh toán tiền thức ăn - đồ uống",
+            "Giới thiệu địa danh du lịch (Kiểm tra giữa kì)"
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,37 +62,37 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void init() {
-        layoutConvert = findViewById(R.id.layoutConvert);
-        layoutBMI = findViewById(R.id.layoutBMI);
-        layoutFood = findViewById(R.id.layoutFood);
-        layoutPay = findViewById(R.id.layoutPay);
+        menuArrayList = new ArrayList<>();
+        rcvMenu = findViewById(R.id.rcvMenu);
+
+        menuArrayList.add(new Menu(icon[0], title[0]));
+        menuArrayList.add(new Menu(icon[1], title[1]));
+        menuArrayList.add(new Menu(icon[2], title[2]));
+        menuArrayList.add(new Menu(icon[3], title[3]));
+        menuArrayList.add(new Menu(icon[4], title[4]));
+
+        menuAdapter = new MenuAdapter(menuArrayList, this);
+        rcvMenu.setLayoutManager(new LinearLayoutManager(this));
+        rcvMenu.setAdapter(menuAdapter);
+
+
     }
 
     private void setAction() {
-        layoutBMI.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        menuAdapter.setOnClickItemMenuListener((position, menu) -> {
+            if (position == 0) {
                 showBMIFragment();
-            }
-        });
-        layoutConvert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            } else if (position == 1) {
                 showConvertFragment();
-            }
-        });
-        layoutFood.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            } else if (position == 2) {
                 showFoodFragment();
-            }
-        });
-        layoutPay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            } else if (position == 3) {
                 showPayFragment();
+            } else if (position == 4) {
+                showTravelFragment();
             }
         });
+
     }
 
     private void showConvertFragment() {
@@ -83,19 +109,35 @@ public class MainActivity extends AppCompatActivity {
             addNewFragments(bmi, BMIFragment.class.getName(), BMIFragment.class.getName());
         }
     }
-    private void showFoodFragment(){
-        if (getSupportFragmentManager().findFragmentByTag(FoodFragment.class.getName()) ==null){
+
+    private void showFoodFragment() {
+        if (getSupportFragmentManager().findFragmentByTag(FoodFragment.class.getName()) == null) {
             FoodFragment foodFragment = new FoodFragment();
             addNewFragments(foodFragment, FoodFragment.class.getName(), FoodFragment.class.getName());
         }
     }
 
-    private void showPayFragment(){
-        if (getSupportFragmentManager().findFragmentByTag(PayFragment.class.getName()) ==null){
+    private void showPayFragment() {
+        if (getSupportFragmentManager().findFragmentByTag(PayFragment.class.getName()) == null) {
             PayFragment fragment = new PayFragment();
-            addNewFragments(fragment,PayFragment.class.getName(),PayFragment.class.getName());
+            addNewFragments(fragment, PayFragment.class.getName(), PayFragment.class.getName());
         }
     }
+
+    private void showTravelFragment() {
+        if (getSupportFragmentManager().findFragmentByTag(TravelFragment.class.getName()) == null) {
+            TravelFragment fragment = new TravelFragment();
+            addNewFragments(fragment, TravelFragment.class.getName(), TravelFragment.class.getName());
+        }
+    }
+    public void showDetailFragment(Travel travel){
+        if (getSupportFragmentManager().findFragmentByTag(DetailTravelFragment.class.getName()) ==null){
+            DetailTravelFragment fragment = new DetailTravelFragment();
+            fragment.setTravel(travel);
+            addNewFragments(fragment,DetailTravelFragment.class.getName(),DetailTravelFragment.class.getName());
+        }
+    }
+
     private void addNewFragments(@NonNull Fragment fragment, @NonNull String fragmentTags, @NonNull String backStack) {
         getSupportFragmentManager()
                 .beginTransaction()
@@ -120,11 +162,9 @@ public class MainActivity extends AppCompatActivity {
     public void setUserInterface(View view) {
 
         if (!(view instanceof EditText)) {
-            view.setOnTouchListener(new View.OnTouchListener() {
-                public boolean onTouch(View v, MotionEvent event) {
-                    hideKeyBoard(MainActivity.this);
-                    return false;
-                }
+            view.setOnTouchListener((v, event) -> {
+                hideKeyBoard(MainActivity.this);
+                return false;
             });
         }
 
@@ -149,14 +189,9 @@ public class MainActivity extends AppCompatActivity {
             if (isExit) {
                 finish();
             } else {
-                Toast.makeText( MainActivity.this, "Press again to exit!", Toast.LENGTH_SHORT ).show();
+                Toast.makeText(MainActivity.this, "Press again to exit!", Toast.LENGTH_SHORT).show();
                 isExit = true;
-                new Handler().postDelayed( new Runnable() {
-                    @Override
-                    public void run() {
-                        isExit = false;
-                    }
-                }, 3000 );
+                new Handler().postDelayed(() -> isExit = false, 3000);
             }
         }
     }

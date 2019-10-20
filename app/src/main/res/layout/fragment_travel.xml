@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f2f2f2"
-    android:orientation="vertical">
+    android:background="#fff"
+    android:clickable="true"
+    android:focusable="true">
 
     <RelativeLayout
         android:id="@+id/layoutBar"
@@ -13,22 +12,32 @@
         android:layout_height="?attr/actionBarSize"
         android:background="#2196F3">
 
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:padding="12dp"
+            android:src="@drawable/ic_back" />
+
         <TextView
             style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Bài Tập Lập Trình Nhúng"
+            android:text="Địa Danh Du Lịch"
             android:textColor="#fff" />
     </RelativeLayout>
 
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerInParent="true"/>
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcvMenu"
+        android:id="@+id/rcvDuLich"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/layoutBar">
 
     </androidx.recyclerview.widget.RecyclerView>
-
-
 </RelativeLayout>

@@ -9,6 +9,9 @@ import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 
 public class Utils {
+
+    public static String uri = "file:///android_asset/image/";
+
     private static DecimalFormat decimalFormat = new DecimalFormat("#.##");
 
     public static String convertTempF(int tempC){
@@ -24,10 +27,10 @@ public class Utils {
         float f = Float.parseFloat(convertDot);
         return f;
     }
-    public static String loadJSONFromAssets(Context context) {
+    public static String loadJSONFromAssets(Context context,String nameJson) {
         String json = null;
         try {
-            InputStream inputStream = context.getAssets().open("food.json");
+            InputStream inputStream = context.getAssets().open(nameJson);
             int size = inputStream.available();
             byte[] buffer = new byte[size];
             inputStream.read(buffer);

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true"
+    android:focusable="true">
+
+    <RelativeLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="?attr/selectableItemBackground">
+
+        <ImageView
+            android:id="@+id/imgPicture"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_margin="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banh_gio" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/imgPicture"
+            android:gravity="center_vertical"
+            android:text="Hà Nội"
+            android:textColor="#FF0000" />
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTitle"
+            android:layout_toRightOf="@+id/imgPicture"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:justificationMode="inter_word"
+            android:maxLines="4"
+            android:text="Hà Nội có một vẻ đẹp khó cưỡng toát lên từ khí chất, từ “cái hồn” đặc trưng của nơi đây. Du khách trong và ngoài nước mê Hà Nội bởi vẻ đẹp pha trộn giữa xưa và nay,"
+            android:textColor="#616161" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvDescription"
+            android:layout_marginTop="30dp"
+            android:layout_toRightOf="@+id/imgPicture"
+            android:gravity="end"
+            android:text="Xem thêm >>"
+            android:textColor="#003CFF" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_below="@+id/item"
+        android:background="#797979" />
+</RelativeLayout>

@@ -13,12 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.dev.lvc.baitap.R;
+import com.dev.lvc.baitap.Utils;
 import com.dev.lvc.baitap.activities.MainActivity;
 import com.dev.lvc.baitap.models.Food;
 
 import java.util.ArrayList;
 
-public  class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ItemFoodViewHolder> {
+public class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ItemFoodViewHolder> {
 
     private MainActivity activity;
 
@@ -43,34 +44,26 @@ public  class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ItemFoodViewH
     public void onBindViewHolder(@NonNull final ItemFoodViewHolder holder, final int position) {
         final Food food = foodArrayList.get(position);
 //
-        Glide.with(activity).load(food.getIcon()).into(holder.imgIcon);
+        Glide.with(activity).load(Utils.uri + food.getIcon()).into(holder.imgIcon);
         holder.tvName.setText(food.getName());
         holder.tvMoney.setText(food.getMoney() + " VND");
 
 
-        holder.imgUp.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
-                int count = food.getCount();
-                count++;
+        holder.imgUp.setOnClickListener(v -> {
+            int count = food.getCount();
+            count++;
+            food.setCount(count);
+            holder.tvCount.setText(String.valueOf(count));
+        });
+        holder.imgDown.setOnClickListener(v -> {
+
+            if (Integer.valueOf(holder.tvCount.getText().toString()) > 0) {
+                int count = Integer.valueOf(holder.tvCount.getText().toString());
+                count--;
                 food.setCount(count);
                 holder.tvCount.setText(String.valueOf(count));
             }
-        });
-        holder.imgDown.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("SetTextI18n")
-            @Override
-            public void onClick(View v) {
 
-                if (Integer.valueOf(holder.tvCount.getText().toString()) > 0) {
-                    int count = Integer.valueOf(holder.tvCount.getText().toString());
-                    count--;
-                    food.setCount(count);
-                    holder.tvCount.setText(String.valueOf(count));
-                }
-
-            }
         });
     }
 
@@ -92,12 +85,9 @@ public  class FoodAdapter extends RecyclerView.Adapter<FoodAdapter.ItemFoodViewH
             imgIcon = itemView.findViewById(R.id.imgIcon);
             imgUp = itemView.findViewById(R.id.imgUp);
             imgDown = itemView.findViewById(R.id.imgDown);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (onClickItem != null)
-                        onClickItem.setOnClickFoodItem(getAdapterPosition(), foodArrayList.get(getAdapterPosition()));
-                }
+            itemView.setOnClickListener(v -> {
+                if (onClickItem != null)
+                    onClickItem.setOnClickFoodItem(getAdapterPosition(), foodArrayList.get(getAdapterPosition()));
             });
         }
     }

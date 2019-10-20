@@ -37,22 +37,14 @@ public class ConvertFragment extends BaseFragment {
 
     }
     private void setAction(){
-        btnConvert.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.hideKeyBoard(mainActivity);
-                if (!TextUtils.isEmpty(editText.getText().toString())){
-                    String result = Utils.convertTempF(Integer.valueOf(editText.getText().toString()));
-                    tvResult.setText(result);
-                }
+        btnConvert.setOnClickListener(v -> {
+            MainActivity.hideKeyBoard(mainActivity);
+            if (!TextUtils.isEmpty(editText.getText().toString())){
+                String result = Utils.convertTempF(Integer.valueOf(editText.getText().toString()));
+                tvResult.setText(result);
             }
         });
-        imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.onBackPressed();
-            }
-        });
+        imgBack.setOnClickListener(v -> mainActivity.onBackPressed());
     }
     @Override
     protected int getLayoutID() {

@@ -3,6 +3,7 @@ package com.dev.lvc.baitap.fragments;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
@@ -17,6 +18,7 @@ public class FoodFragment extends BaseFragment implements View.OnClickListener {
 
     private CheckBox check1,check2,check3,check4,check5,check6,check7,check8;
 
+    private ImageView imgBack;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class FoodFragment extends BaseFragment implements View.OnClickListener {
         mon7.setOnClickListener(this);
         mon8.setOnClickListener(this);
 
+        imgBack.setOnClickListener(v -> mainActivity.onBackPressed());
     }
 
     private void initID(){
@@ -51,6 +54,8 @@ public class FoodFragment extends BaseFragment implements View.OnClickListener {
         check6 = view.findViewById(R.id.check6);
         check7 = view.findViewById(R.id.check7);
         check8 = view.findViewById(R.id.check8);
+
+        imgBack =view.findViewById(R.id.imgBack);
     }
     @Override
     protected int getLayoutID() {

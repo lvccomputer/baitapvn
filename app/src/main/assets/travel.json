@@ -1,55 +1,125 @@
 {
 	"Travel":[
 		{
+			"id":"0",
 			"name": "Hà Nội",
 			"icon": "hanoi.jpg",
-			"content": "Trong các clip về Việt Nam của bạn bè khắp năm châu, bốn bể, hình ảnh ruộng bậc thang ngút ngàn luôn xuất hiện với nét đẹp độc đáo. Ruộng bậc thang đẹp bốn mùa quanh năm, vừa rộng lớn, hùng vĩ, lại vừa uyển chuyển, nên thơ. Vào mùa nước đổ, ruộng bậc thang lấp lánh ánh vàng, phản chiếu ánh sáng mặt trời, lúa trổ đòng thì xanh mơn mởn tràn đầy sức sống, khi lúa chín thì vàng ruộm một màu rực rỡ. Bởi vậy chẳng có gì ngạc nhiên khi những thửa rộng bậc thang Việt Nam được bình chọn là một trong những cảnh quan có màu xanh lá mướt mát đẹp nhất trên thế giới"
+			"hinh1": "hanoi1.jpg",
+			"hinh2": "hanoi2.jpg",
+			"content": "Hà Nội có một vẻ đẹp khó cưỡng toát lên từ khí chất, từ “cái hồn” đặc trưng của nơi đây. Du khách trong và ngoài nước mê Hà Nội bởi vẻ đẹp pha trộn giữa xưa và nay, giữa nét truyền thống của ngàn năm văn hiến và sự hiện đại của một đô thị đang phát triển mạnh mẽ. Hà Nội đẹp cả bốn mùa, mỗi mùa lại có một màu sắc, một mùi hương riêng, nhưng luôn ẩn chứa sự thanh bình, cổ kính rất riêng.",
+			"content2": "Đặt chân đến Hà Nội, bao giờ tâm hồn mỗi người cũng đều cảm thấy sự an nhiên, bình yên từ thẳm sâu, hoài cổ cùng với 36 phố phường, với hồ Gươm, với tháp Rùa, với Văn Miếu...",
+			"des1": "Ảnh: internet",
+			"des2": "Những mái nhà cổ xưa..",
+			"des3": "Những xe hoa... rất Hà Nội...."
 		},
 		{
+			"id":"1",
 			"name": "Ruộng bậc thang",
 			"icon": "ruongbacthang.jpg",
-			"content": "Hà Nội có một vẻ đẹp khó cưỡng toát lên từ khí chất, từ “cái hồn” đặc trưng của nơi đây. Du khách trong và ngoài nước mê Hà Nội bởi vẻ đẹp pha trộn giữa xưa và nay, giữa nét truyền thống của ngàn năm văn hiến và sự hiện đại của một đô thị đang phát triển mạnh mẽ."
+			"hinh1": "ruongbacthang1.jpg",
+			"hinh2": "ruongbacthang2.jpg",
+			"content": "Trong các clip về Việt Nam của bạn bè khắp năm châu, bốn bể, hình ảnh ruộng bậc thang ngút ngàn luôn xuất hiện với nét đẹp độc đáo. Ruộng bậc thang đẹp bốn mùa quanh năm, vừa rộng lớn, hùng vĩ, lại vừa uyển chuyển, nên thơ. Vào mùa nước đổ, ruộng bậc thang lấp lánh ánh vàng, phản chiếu ánh sáng mặt trời, lúa trổ đòng thì xanh mơn mởn tràn đầy sức sống, khi lúa chín thì vàng ruộm một màu rực rỡ. Bởi vậy chẳng có gì ngạc nhiên khi những thửa rộng bậc thang Việt Nam được bình chọn là một trong những cảnh quan có màu xanh lá mướt mát đẹp nhất trên thế giới.",
+			"content2": "",
+			"des1": "Ruộng bậc thang mang vẻ đẹp mê hồn...",
+			"des2": "Ảnh: internet",
+			"des3": "Ảnh: internet"
 		},
 		{
+			"id":"2",
 			"name": "Vịnh Hạ Long",
 			"icon": "halong.jpg",
-			"content": "Không chỉ được UNESCO công nhận vịnh là Di sản thiên nhiên thế giới, tháng 3/2012, vịnh Hạ Long còn nhận thêm danh hiệu là một trong 7 kỳ quan thiên nhiên mới của thế giới do tổ chức 7 New Open World phát động. Vịnh Hạ Long giống như một bức tranh thủy mặc khổng lồ, với hàng ngàn đảo đá muôn hình vạn trạng, góp phần tạo nên vẻ sống động, "
+			"hinh1": "halong1.jpg",
+			"hinh2": "halong2.jpg",
+			"content": "Không chỉ được UNESCO công nhận vịnh là Di sản thiên nhiên thế giới, tháng 3/2012, vịnh Hạ Long còn nhận thêm danh hiệu là một trong 7 kỳ quan thiên nhiên mới của thế giới do tổ chức 7 New Open World phát động. Vịnh Hạ Long giống như một bức tranh thủy mặc khổng lồ, với hàng ngàn đảo đá muôn hình vạn trạng, góp phần tạo nên vẻ sống động, tuyệt mĩ. Đến với nơi đây, du khách sẽ được trải qua cảm giác lênh đênh giữa trùng khơi, ngắm nhìn cảnh quan độc đáo, đặc sắc được tạo nên bởi bàn tay tạo hóa.",
+			"content2": "",
+			"des1": "Sự kết hợp tài tình của tạo hóa đã mang đến cho du lịch Việt Nam một tuyệt tác thiên nhiên.",
+			"des2": "Làng chài Hạ Long.",
+			"des3": "Ảnh: Zing"
 		},
 		{
+			"id":"3",
 			"name": "Hang Sơn Đoòng",
 			"icon": "sondoong.jpg",
-			"content": "Được công nhận là hang động tự nhiên lớn nhất thế giới, hang Sơn Đoòng có lẽ là từ khoá hot nhất trong năm 2015 với cả du lịch Việt Nam và du lịch thế giới. Sơn Đoòng sở hữu vẻ đẹp kỳ thú, đặc biệt “hiếm có, khó tìm”. Càng đi sâu vào Sơn Đoòng, càng nhiều hóa "
+			"hinh1": "sondoong1.jpg",
+			"hinh2": "sondoong2.jpg",
+			"content": "Được công nhận là hang động tự nhiên lớn nhất thế giới, hang Sơn Đoòng có lẽ là từ khoá hot nhất trong năm 2015 với cả du lịch Việt Nam và du lịch thế giới. Sơn Đoòng sở hữu vẻ đẹp kỳ thú, đặc biệt “hiếm có, khó tìm”. Càng đi sâu vào Sơn Đoòng, càng nhiều hóa thạch càng lộ ra với vẻ hoang sơ, bí ẩn của hang động này… Bên trong hang là cả rừng nhiệt đới, những bãi cát trắng mịn và một hệ thống thực vật kỳ bí.",
+			"content2": "Vẻ đẹp của Sơn Đoòng đã “cưa đổ” trái tim của những người yêu thích du lịch và khám phá trên khắp mọi miền thế giới. Có lẽ vì vậy mà dù mức giá lên tới hơn 60 triệu nhưng tour du lịch khám phá hang Sơn Đoòng vẫn khiến nhiều người sẵn sàng chi tiền và ao ước một lần được ghé tới.",
+			"des1": "Ảnh: Ryan Deboodt.",
+			"des2": "Ánh sáng lọt xuống.",
+			"des3": "Hình ảnh hang Sơn Đoòng trong phóng sự của đài ABC"
 		},
 		{
+			"id":"4",
 			"name": "Phố cổ Hội An",
 			"icon": "hoian.jpg",
-			"content": "Có nhiều người mê Hội An đến mức một năm không ghé thăm một lần là trong lòng thấy bứt rứt, khó chịu. Hội An không lớn, nhưng nét quyến rũ của nơi đây thì phải dùng từ vô biên để miêu tả. Dãy phố cổ với những ngôi nhà gỗ cổ kính, "
+			"hinh1": "hoian1.jpg",
+			"hinh2": "hoian2.jpg",
+			"content": "Có nhiều người mê Hội An đến mức một năm không ghé thăm một lần là trong lòng thấy bứt rứt, khó chịu. Hội An không lớn, nhưng nét quyến rũ của nơi đây thì phải dùng từ \"vô biên\" để miêu tả. Dãy phố cổ với những ngôi nhà gỗ cổ kính, đèn lồng màu sắc nghiêng bóng bên sông Hoài với thuyền gỗ trôi lững lờ có sức hút kỳ lạ với tất cả mọi người. Hội An nhận được hàng triệu lời khen ngợi trên các trang tin, blog về du lịch nổi danh trên thế giới, điều mà thành phố xinh đẹp này hoàn toàn xứng đáng có được.",
+			"content2": "",
+			"des1": "Hội An bình yên...",
+			"des2": "... Với những quán trà bánh vô cùng ấn tượng.",
+			"des3": "Phố cổ Hội An khi màn đêm buông xuống"
 		},
 		{
+			"id":"5",
 			"name": "Đèo Hải Vân",
 			"icon": "deohaivan.jpg",
-			"content": "Cung đường đèo Hải Vân mê ly đến nỗi nhiều người nhút nhát cũng quyết định “liều” một phen, “phượt” qua đây bằng xe máy để cảm nhận được hết vẻ đẹp của nó. Từng xuất hiện trong show truyền hình thực tế Top Gear năm 2008 của Anh, "
+			"hinh1": "deohaivan1.jpg",
+			"hinh2": "deohaivan2.jpg",
+			"content": "Cung đường đèo Hải Vân mê ly đến nỗi nhiều người nhút nhát cũng quyết định “liều” một phen, “phượt” qua đây bằng xe máy để cảm nhận được hết vẻ đẹp của nó. Từng xuất hiện trong show truyền hình thực tế Top Gear năm 2008 của Anh, đèo Hải Vân được Jeremy Clarkson, nhà sản xuất chương trình mô tả: “Cung đường đèo Hải Vân là một trong những cung đường ven biển đẹp nhất thế giới, tựa như một dải lụa hoang sơ tuyệt vời”.",
+			"content2": "Dài 23km, nằm ở độ cao khoảng 500m so với mực nước biển, đèo Hải Vân vắt ngang những sườn núi chập chùng của dãy Trường Sơn và men theo biển Đông. Một bên là núi cao vời vợi, một bên là biển sâu thăm thẳm, thật khó mà không xiêu lòng trước vẻ kỳ vĩ của con đèo tuyệt vời này.",
+			"des1": "Cung đường đèo Hải Vân đẹp như mơ.",
+			"des2": "Ảnh: internet",
+			"des3": "Ảnh: internet"
 		},
 		{
+			"id":"6",
 			"name": "Đại Nội - cố đô Huế",
 			"icon": "hue.jpg",
-			"content": "Tại Hội nghị của Bộ trưởng phụ trách Văn hóa nghệ thuật (VHNT) các nước ASEAN + 3 (Nhật Bản, Hàn Quốc, Trung Quốc) vừa qua, Huế đã vinh dự nằm trong top 1 trong 3 được nhận danh hiệu Thành phố văn hóa của ASEAN giai đoạn 2014 - 2015"
+			"hinh1": "hue1.jpg",
+			"hinh2": "hue2.jpg",
+			"content": "Tại Hội nghị của Bộ trưởng phụ trách Văn hóa nghệ thuật (VHNT) các nước ASEAN + 3 (Nhật Bản, Hàn Quốc, Trung Quốc) vừa qua, Huế đã vinh dự nằm trong top 1 trong 3 được nhận danh hiệu Thành phố văn hóa của ASEAN giai đoạn 2014 - 2015. Đến Huế, bạn không thể không tham quan Đại Nội. Nơi đây là một sự kết hợp mẫu mực giữa hai dòng kiến trúc Đông – Tây, toát lên vẻ đẹp cổ kính, thiêng liêng. Từng đường chạm trổ, nét hoa văn đều tràn đầy sự tinh tế, trang nhã, thanh lịch, cộng với cách sắp xếp phong thủy hài hòa, cân bằng, có núi Ngự Bình, có dòng sông Hương, cồn Giã Viên, cồn Bộc Thanh... Nơi đây được đánh giá như một “kiệt tác đô thị, một điển hình nổi bật của một Kinh đô phong kiến Phương Đông”, và là điểm du lịch hút cả khách Việt Nam lẫn thế giới.",
+			"content2": "",
+			"des1": "Nét cổ kính của Đại Nội Huế (Ảnh: tourconduongdisan.com)",
+			"des2": "Lăng Tự Đức - ảnh: Giadinhonline",
+			"des3": "Ảnh: chudu24"
 		},
 		{
+			"id":"7",
 			"name": "Biển Nha Trang",
 			"icon": "nhatrang.jpg",
-			"content": "Nha Trang từng lọt vào danh sách một trong những bãi biển đẹp nhất thế giới. Cảnh đẹp tuyệt vời nơi đây là một trong những niềm tự hào của người dân Việt Nam về quê hương xứ sở. Nơi đây được yêu thích không chỉ bởi bãi biển lộng lẫy với biển xanh, "
+			"hinh1": "nhatrang1.jpg",
+			"hinh2": "nhatrang2.jpg",
+			"content": "Nha Trang từng lọt vào danh sách một trong những bãi biển đẹp nhất thế giới. Cảnh đẹp tuyệt vời nơi đây là một trong những niềm tự hào của người dân Việt Nam về quê hương xứ sở. Nơi đây được yêu thích không chỉ bởi bãi biển lộng lẫy với biển xanh, cát trắng trải dài mà còn bởi những hòn đảo hoang sơ với hệ sinh thái san hô kỳ ảo. Vẻ đẹp của Nha Trang quả không phụ cái tên “hòn ngọc viễn Đông” mà nơi đây được phong tặng.",
+			"content2": "",
+			"des1": "Nha Trang đẹp như một viên ngọc quý - Ảnh: vietnamcharm",
+			"des2": "Thành phố biển Nha Trang - Ảnh: blueoceantracvel",
+			"des3": "(Ảnh: nhatrangsentravel.vn)"
 		},
 		{
+			"id":"8",
 			"name": "Đồi Cát Bay - Mũi Né",
 			"icon": "muine.jpg",
-			"content": "Đồi cát mịn như nhung ở Mũi Né là background mà nhiều tạp chí cũng như nhiếp ảnh gia nổi danh trên thế giới ưa chuộng. Cồn cát ở đây do mỏ sắt cổ tồn tại hàng trăm năm kiến tạo nên. Gọi là đồi cát Bay vì hình dáng của đồi cát thay đổi theo giờ, "
+			"hinh1": "muine1.jpg",
+			"hinh2": "muine2.jpg",
+			"content": "Đồi cát mịn như nhung ở Mũi Né là \"background\" mà nhiều tạp chí cũng như nhiếp ảnh gia nổi danh trên thế giới ưa chuộng. Cồn cát ở đây do mỏ sắt cổ tồn tại hàng trăm năm kiến tạo nên. Gọi là đồi cát Bay vì hình dáng của đồi cát thay đổi theo giờ, theo ngày, theo tháng,… và không có hình dáng nhất định. Cảnh đẹp độc đáo giữa một bên mênh mang cát, giống như sa mạc, một bên là biển xanh ngăn ngắt lấp lánh dưới nắng khiến nơi đây trở thành địa danh du lịch hút khách, và là “nàng thơ” của nhiều nghệ sĩ.",
+			"content2": "",
+			"des1": "Vẻ đẹp lộng lẫy của Đồi Cát Bay Mũi Né (Ảnh: phanthietvn.com)",
+			"des2": "Ảnh: phanthiet.vn",
+			"des3": "Ảnh: phanthiet.vn"
 		},
 		{
+			"id":"9",
 			"name": "Rừng ngập mặn Cần Giờ",
 			"icon": "rungcangio.jpg",
-			"content": "Rừng ngập mặn Cần Giờ vừa lọt vào danh sách 27 kỳ quan thiên nhiên ở châu Á do Smarter Travel , chuyên trang du lịch của Mỹ bình chọn. Nơi đây là một trong những địa điểm du lịch sinh thái lý tưởng, được UNESCO công nhận là khu dự trữ sinh quyển của Đông Nam Á. "
-		},
+			"hinh1": "cangio1.jpg",
+			"hinh2": "cangio2.jpg",
+			"content": "Rừng ngập mặn Cần Giờ vừa lọt vào danh sách 27 kỳ quan thiên nhiên ở châu Á do Smarter Travel , chuyên trang du lịch của Mỹ bình chọn. Nơi đây là một trong những địa điểm du lịch sinh thái lý tưởng, được UNESCO công nhận là khu dự trữ sinh quyển của Đông Nam Á. Đến với Cần Giờ, bạn sẽ được chìm trong thiên nhiên hoang sơ, với vô vàn sản vật, thưởng thức vẻ dân giã, đặc trưng của rừng ngập mặn với những thân, rễ cây đước chằng chịt, hay ngắm nhìn những cánh cò, cánh vạc... chao lượn dưới bóng hoàng hôn thẫm đỏ.",
+			"content2": "",
+			"des1": "Ảnh: yatlat",
+			"des2": "Vẻ hoang sơ của rừng ngập mặn Cần Giờ (Ảnh: duhanhviet)",
+			"des3": "Vẻ hoang sơ của rừng ngập mặn Cần Giờ (Ảnh: duhanhviet)"
+		}
 	]
 	
 }

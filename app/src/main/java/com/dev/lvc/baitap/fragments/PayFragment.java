@@ -3,9 +3,12 @@ package com.dev.lvc.baitap.fragments;
 import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
 import androidx.annotation.NonNull;
@@ -34,16 +37,21 @@ public class PayFragment extends BaseFragment {
 
     private RecyclerView rcvFood, rcvDrinks;
 
-
     private RelativeLayout payMoney;
 
-    private int money, count;
+    private ImageView imgBack;
 
+    private ProgressBar progressBar1,progressBar2;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         initID();
-        getData();
+        new Handler().postDelayed(() -> {
+            progressBar1.setVisibility(View.GONE);
+            progressBar2.setVisibility(View.GONE);
+            getData();
+
+        },1500);
     }
 
 
@@ -54,11 +62,16 @@ public class PayFragment extends BaseFragment {
         rcvDrinks = view.findViewById(R.id.rcvDrinks);
         rcvFood = view.findViewById(R.id.rcvFood);
         payMoney = view.findViewById(R.id.payMoney);
+        imgBack = view.findViewById(R.id.imgBack);
+
+        progressBar1 = view.findViewById(R.id.progressBar1);
+        progressBar2 = view.findViewById(R.id.progressBar2);
+        imgBack.setOnClickListener(v -> mainActivity.onBackPressed());
     }
 
     private void getData() {
         try {
-            JSONObject jsonObject = new JSONObject(Utils.loadJSONFromAssets(mainActivity));
+            JSONObject jsonObject = new JSONObject(Utils.loadJSONFromAssets(mainActivity,"food.json"));
             JSONArray foodArrays = jsonObject.getJSONArray("Foods");
             JSONArray drinkArrays = jsonObject.getJSONArray("Drinks");
 
@@ -95,38 +108,25 @@ public class PayFragment extends BaseFragment {
         rcvFood.setAdapter(foodAdapter);
         rcvDrinks.setAdapter(drinkAdapter);
 
-        payMoney.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                int moneyFood = 0;
-                int moneyDrink = 0;
-                for (int index = 0; index < foodArrayList.size(); index++) {
-                    moneyFood += foodArrayList.get(index).getCount() * foodArrayList.get(index).getMoney();
-                }
-                for (int index = 0; index < drinkArrayList.size(); index++) {
-                    moneyDrink += drinkArrayList.get(index).getCount() * foodArrayList.get(index).getMoney();
-                }
-                AlertDialog.Builder builder = new AlertDialog.Builder(mainActivity);
-
-                builder.setTitle("Tổng tiền cần thanh toán");
-                builder.setMessage(moneyDrink+moneyFood +" VND");
-                builder.setCancelable(false);
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-                builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        dialogInterface.dismiss();
-                    }
-                });
-                AlertDialog alertDialog = builder.create();
-                alertDialog.show();
-//                Log.e(TAG, "onClick: "+(sum+sum2) );
+        payMoney.setOnClickListener(v -> {
+            int moneyFood = 0;
+            int moneyDrink = 0;
+            for (int index = 0; index < foodArrayList.size(); index++) {
+                moneyFood += foodArrayList.get(index).getCount() * foodArrayList.get(index).getMoney();
             }
+            for (int index = 0; index < drinkArrayList.size(); index++) {
+                moneyDrink += drinkArrayList.get(index).getCount() * drinkArrayList.get(index).getMoney();
+                Log.e(TAG, "onClick: "+drinkArrayList.get(index).getCount()+" + "+drinkArrayList.get(index).getMoney());
+            }
+            AlertDialog.Builder builder = new AlertDialog.Builder(mainActivity);
+
+            builder.setTitle("Tổng tiền cần thanh toán");
+            builder.setMessage(moneyDrink+moneyFood +" VND");
+            builder.setCancelable(false);
+            builder.setPositiveButton("OK", (dialogInterface, i) -> dialogInterface.dismiss());
+            builder.setNegativeButton("Cancel", (dialogInterface, i) -> dialogInterface.dismiss());
+            AlertDialog alertDialog = builder.create();
+            alertDialog.show();
         });
     }
 

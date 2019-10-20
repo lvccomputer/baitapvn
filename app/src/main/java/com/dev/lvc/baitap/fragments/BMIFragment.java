@@ -40,37 +40,29 @@ public class BMIFragment extends BaseFragment {
     }
 
     private void actionView() {
-        btnCount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MainActivity.hideKeyBoard(mainActivity);
-                if (!TextUtils.isEmpty(edtWeight.getText().toString()) || !TextUtils.isEmpty(edtHeight.getText().toString())) {
-                    float result = Utils.BMI(Float.valueOf(edtWeight.getText().toString()), Integer.valueOf(edtHeight.getText().toString()));
-                    tvResult.setText(result+"");
-                    if (result<18){
-                        tvReview.setText(R.string.bmi18);
-                    }else if (result>=18 &&result<24.9){
-                        tvReview.setText(R.string.bmi24);
-                    }else if (result>=25 && result<29.9){
-                        tvReview.setText(R.string.bmi29);
-                    }else if (result>=30 && result <34.9){
-                        tvReview.setText(R.string.bmi34);
-                    }else if (result>35){
-                        tvReview.setText(R.string.bmi35);
-                    }
-
-
-                }else {
-                    Toast.makeText(mainActivity,"Chieu cao hoac Can nang khong hop le!",Toast.LENGTH_SHORT).show();
+        btnCount.setOnClickListener(v -> {
+            MainActivity.hideKeyBoard(mainActivity);
+            if (!TextUtils.isEmpty(edtWeight.getText().toString()) || !TextUtils.isEmpty(edtHeight.getText().toString())) {
+                float result = Utils.BMI(Float.valueOf(edtWeight.getText().toString()), Integer.valueOf(edtHeight.getText().toString()));
+                tvResult.setText(result+"");
+                if (result<18){
+                    tvReview.setText(R.string.bmi18);
+                }else if (result>=18 &&result<24.9){
+                    tvReview.setText(R.string.bmi24);
+                }else if (result>=25 && result<29.9){
+                    tvReview.setText(R.string.bmi29);
+                }else if (result>=30 && result <34.9){
+                    tvReview.setText(R.string.bmi34);
+                }else if (result>35){
+                    tvReview.setText(R.string.bmi35);
                 }
+
+
+            }else {
+                Toast.makeText(mainActivity,"Chieu cao hoac Can nang khong hop le!",Toast.LENGTH_SHORT).show();
             }
         });
-        imgBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mainActivity.onBackPressed();
-            }
-        });
+        imgBack.setOnClickListener(v -> mainActivity.onBackPressed());
     }
     @Override
     protected int getLayoutID() {
