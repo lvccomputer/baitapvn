@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="#fff"
+    android:clickable="true"
+    android:focusable="true"
+    android:id="@+id/fragmentAdd"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#2196F3">
+
+        <ImageView
+            android:id="@+id/imgBack"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:padding="15dp"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            style="@style/TextAppearance.AppCompat.Widget.ActionBar.Title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Điền thông tin sách"
+            android:textColor="#fff" />
+
+        <ImageView
+            android:id="@+id/imgAccept"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_alignParentEnd="true"
+            android:padding="15dp"
+            android:src="@drawable/ic_ticked" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="40dp"
+                android:text="Tên sách *"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtName"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="Điền tên sách ..."
+                android:text=""
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="#5E5E5E" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:text="Mô tả *"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtDescription"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="Ghi mô tả của sách ..."
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="#5E5E5E" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:text="Số trang *"
+                android:textSize="14sp" />
+
+            <EditText
+                android:inputType="number"
+                android:id="@+id/edtPage"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="Số trang ..."
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="#5E5E5E" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="30dp"
+                android:text="Giá bán *"
+                android:textSize="14sp" />
+
+            <EditText
+                android:inputType="number"
+                android:id="@+id/edtPrice"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="15dp"
+                android:background="@null"
+                android:gravity="center_vertical"
+                android:hint="Điền giá bán của sách ..."
+                android:scrollHorizontally="true"
+                android:textColor="#000"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="#5E5E5E" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

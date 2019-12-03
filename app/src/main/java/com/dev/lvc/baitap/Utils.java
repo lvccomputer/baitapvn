@@ -1,10 +1,15 @@
 package com.dev.lvc.baitap;
 
 import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.text.DecimalFormat;
 
@@ -44,5 +49,46 @@ public class Utils {
 
         }
         return json;
+    }
+    public static SQLiteDatabase readSQLBookFromAssets(String filename, Context context) {
+        File file = context.getDatabasePath(filename);
+        if (!file.exists()) {
+            if (!file.getParentFile().exists()) {
+                file.getParentFile().mkdir();
+            }
+
+            InputStream inputStream = null;
+            try {
+                inputStream = context.getAssets().open(filename);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            OutputStream outputStream = null;
+            try {
+                outputStream = new FileOutputStream(file);
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            byte[] buffer = new byte[1024 * 8];
+            int numOfBytesToRead;
+            try {
+                while ((numOfBytesToRead = inputStream.read(buffer)) > 0)
+                    outputStream.write(buffer, 0, numOfBytesToRead);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                inputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                outputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return SQLiteDatabase.openOrCreateDatabase(file, null);
     }
 }

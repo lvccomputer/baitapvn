@@ -7,24 +7,29 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.dev.lvc.baitap.R;
+import com.dev.lvc.baitap.Utils;
 import com.dev.lvc.baitap.adapters.MenuAdapter;
+import com.dev.lvc.baitap.fragments.book_manager.AddBookFragment;
 import com.dev.lvc.baitap.fragments.BMIFragment;
+import com.dev.lvc.baitap.fragments.book_manager.BookFragment;
 import com.dev.lvc.baitap.fragments.ConvertFragment;
 import com.dev.lvc.baitap.fragments.DetailTravelFragment;
 import com.dev.lvc.baitap.fragments.FoodFragment;
 import com.dev.lvc.baitap.fragments.PayFragment;
 import com.dev.lvc.baitap.fragments.TravelFragment;
+import com.dev.lvc.baitap.fragments.book_manager.EditBookFragment;
+import com.dev.lvc.baitap.listener.UpdateBookListener;
+import com.dev.lvc.baitap.models.Book;
 import com.dev.lvc.baitap.models.Menu;
 import com.dev.lvc.baitap.models.Travel;
 
@@ -36,27 +41,29 @@ public class MainActivity extends AppCompatActivity {
     private RecyclerView rcvMenu;
     private MenuAdapter menuAdapter;
     private ArrayList<Menu> menuArrayList;
-
+    public SQLiteDatabase sqlBook;
     private int[] icon = {
             R.drawable.bmi,
             R.drawable.convert,
             R.drawable.food,
             R.drawable.money,
-            R.drawable.travel
+            R.drawable.travel,
+            R.drawable.ic_book
     };
     private String[] title = {
             "Tính Chỉ số BMI",
             "Đổi độ C sang độ F",
             "Danh sách thức ăn - Đồ uống",
             "Thanh toán tiền thức ăn - đồ uống",
-            "Giới thiệu địa danh du lịch (Kiểm tra giữa kì)"
+            "Giới thiệu địa danh du lịch (Kiểm tra giữa kì)",
+            "Quản lý Sách"
     };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        sqlBook = Utils.readSQLBookFromAssets("book.db", this);
         init();
         setAction();
     }
@@ -70,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
         menuArrayList.add(new Menu(icon[2], title[2]));
         menuArrayList.add(new Menu(icon[3], title[3]));
         menuArrayList.add(new Menu(icon[4], title[4]));
+        menuArrayList.add(new Menu(icon[5], title[5]));
 
         menuAdapter = new MenuAdapter(menuArrayList, this);
         rcvMenu.setLayoutManager(new LinearLayoutManager(this));
@@ -90,9 +98,32 @@ public class MainActivity extends AppCompatActivity {
                 showPayFragment();
             } else if (position == 4) {
                 showTravelFragment();
+            }else if (position ==5){
+                showBookFragment();
             }
         });
 
+    }
+
+    public void showAddBookFragment(UpdateBookListener updateBookListener){
+        if (getSupportFragmentManager().findFragmentByTag(AddBookFragment.class.getName()) ==null){
+            AddBookFragment fragment = new AddBookFragment();
+            fragment.setUpdateBookListener(updateBookListener);
+            addNewFragments(fragment,AddBookFragment.class.getName(),AddBookFragment.class.getName());
+        }
+    }
+    public void showEditBookFragment(Book book){
+        if (getSupportFragmentManager().findFragmentByTag(EditBookFragment.class.getName())==null){
+            EditBookFragment fragment = new EditBookFragment();
+            fragment.setBook(book);
+            addNewFragments(fragment,AddBookFragment.class.getName(),AddBookFragment.class.getName());
+        }
+    }
+    private void showBookFragment() {
+        if (getSupportFragmentManager().findFragmentByTag(BookFragment.class.getName()) ==null){
+            BookFragment bookFragment = new BookFragment();
+            addNewFragments(bookFragment,BookFragment.class.getName(),BookFragment.class.getName());
+        }
     }
 
     private void showConvertFragment() {
@@ -130,11 +161,12 @@ public class MainActivity extends AppCompatActivity {
             addNewFragments(fragment, TravelFragment.class.getName(), TravelFragment.class.getName());
         }
     }
-    public void showDetailFragment(Travel travel){
-        if (getSupportFragmentManager().findFragmentByTag(DetailTravelFragment.class.getName()) ==null){
+
+    public void showDetailFragment(Travel travel) {
+        if (getSupportFragmentManager().findFragmentByTag(DetailTravelFragment.class.getName()) == null) {
             DetailTravelFragment fragment = new DetailTravelFragment();
             fragment.setTravel(travel);
-            addNewFragments(fragment,DetailTravelFragment.class.getName(),DetailTravelFragment.class.getName());
+            addNewFragments(fragment, DetailTravelFragment.class.getName(), DetailTravelFragment.class.getName());
         }
     }
 
@@ -194,5 +226,11 @@ public class MainActivity extends AppCompatActivity {
                 new Handler().postDelayed(() -> isExit = false, 3000);
             }
         }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        sqlBook.close();
     }
 }
